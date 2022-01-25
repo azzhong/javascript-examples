@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>localStorage Demo</title>
+</head>
+
+<body>
+
+<h1>localStorage Demo</h1>
+<p>This is a demo page for localStorage</p>
+
+<script type="text/javascript">
+    // localStorage is like a hash map (aka. js/json object) in the browswer
+    window.localStorage.setItem('k1', 'v1');
+
+    // no window. will also work
+    localStorage.setItem('k2', 'v2');
+
+    // double quote for string works
+    localStorage.setItem("k3", "v3");
+
+    // key, value can be of int type
+    localStorage.setItem(4, 'v4');
+
+    // object merge down't work, guess localStorage is special in js
+    // can be verified from console.log and alert
+    localStorage = {...localStorage, ...{k5: 'v5'}}
+
+    // after object merge, works as before
+    localStorage.setItem('k6', 'v6');
+
+    console.log(localStorage);
+    alert(JSON.stringify(window.localStorage));
+
+</script>
+
+</body>
+</html>
